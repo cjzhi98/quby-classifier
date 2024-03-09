@@ -11,11 +11,11 @@ def predict_quby(image):
     return {"Quby": probs[0].item(), "Not Quby": 1 - probs[0].item()}
 
 
-# Define the Gradio interface
 iface = gr.Interface(
     fn=predict_quby,
     inputs="image",
     outputs="label",
+    examples=[["quby.png"], ["cat.jpeg"]],
 )
 
 
