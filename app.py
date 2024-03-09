@@ -15,8 +15,8 @@ iface = gr.Interface(
     fn=predict_quby,
     inputs="image",
     outputs="label",
-    examples=[["quby.png"], ["cat.jpeg"]],
+    examples=[["image/quby.png"], ["image/cat.jpeg"]],
 )
 
 
-iface.launch()
+iface.launch(server_name="0.0.0.0", server_port=8000)
